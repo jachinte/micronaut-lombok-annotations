@@ -1,0 +1,9 @@
+micronaut:
+  application:
+    name: demo
+  server:
+    port: 7878
+  security:
+    token:
+      basic-auth:
+        enabled: true
