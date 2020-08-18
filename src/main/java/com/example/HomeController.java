@@ -10,7 +10,9 @@ import io.micronaut.security.rules.SecurityRule;
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.inject.Provider;
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+import lombok.Value;
 
 @Controller
 @RequiredArgsConstructor(onConstructor_={@Inject})
@@ -35,24 +37,13 @@ public class HomeController {
     }
 
     @Introspected
+    @Value
     private static class Locales {
 
         private final String request;
 
         private final String server;
 
-        Locales(final String request, final String server) {
-            this.request = request;
-            this.server = server;
-        }
-
-        public String getRequest() {
-            return this.request;
-        }
-
-        public String getServer() {
-            return this.server;
-        }
     }
 
 }
